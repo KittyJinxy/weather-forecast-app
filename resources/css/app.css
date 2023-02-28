@@ -1,0 +1,19 @@
+.weather-container {
+    font-family: arial;
+    font-size: 24px;
+    margin: 0 auto;
+    width: 700px;
+    height: 600px;
+    outline: dashed 1px black;
+}
+
+.weather-child {
+    width: 650px;
+    height: 550px;
+    background-color: red;
+    position: absolute;
+    top: auto;
+    left: auto;
+    margin: auto;
+    margin-right: auto;
+  }
