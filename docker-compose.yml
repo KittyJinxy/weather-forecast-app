@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+    mysql:
+        image: mysql:8
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: wf
+            MYSQL_DATABASE: weatherforecast
+    phpmyadmin:
+        image: phpmyadmin
+        ports:
+            - "8042:80"
+        environment:
+            PMA_HOST: mysql
+            PMA_PORT: 3306
+            PMA_ARBITRARY: 1
+        links:
+            - mysql
+    weatherforecast:
+        build: .
+        ports:
+            - "8000:8000"
+        volumes:
+            - .:/var/www
+        depends_on:
+            - mysql
+        command: sh -c "composer install && php artisan migrate --env=container && php artisan serve --env=container --host=0.0.0.0 --port=8000"
+        restart: "no"
