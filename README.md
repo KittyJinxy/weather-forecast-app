@@ -12,6 +12,10 @@ This project is a 5-days weather forecast search by IP app that allows users to 
 
 The search can also be made via CLI which will return the result in the terminal and be saved in the databse.
 
+## Pre-requisites
+- Docker (https://docs.docker.com/get-docker/) Version 20.10.21
+- Composer (https://getcomposer.org/download/) Version 2.3.5
+- PHP (https://www.php.net/downloads.php) Version 8.1.10
 
 ## Start the project
 Please note that the project is using Docker and Docker Compose.
